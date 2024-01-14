@@ -7,9 +7,9 @@
   ```sh
   sudo docker rmi -f $(sudo docker images -q)
   ```
-  ### ลบทุก volume ที่มีบน Docker บนเครื่องของคุณ
+  ### ลบทุก Docker volumes ที่มีทั้งหมดในระบบของคุณ
   ```sh
-  sudo docker volume rm $(sudo docker volume ls)
+  sudo docker volume prune
   ```
 # 🚩Docker 
   ### ติดตั้ง Docker ในระบบของคุณ
