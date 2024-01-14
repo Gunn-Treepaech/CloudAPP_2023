@@ -3,6 +3,10 @@
   ```sh
   sudo apt-get install docker.io
   ```
+  ### แสดงความช่วยเหลือ (help) สำหรับคำสั่ง Docker ทั้งหมด
+  ```sh
+  sudo docker --help
+  ```
 # Basic Docker Commands
   ### ดึง image ของ Node.js จาก Docker Hub ที่เวอร์ชันล่าสุดมาที่เครื่องของคุณ
   ```sh
@@ -39,10 +43,6 @@
   ### ส่ง Docker image ที่ชื่อ "node" และเวอร์ชัน 2.0 ขึ้นไปยัง Docker Hub หรือเครื่อง Registry ที่กำหนด
   ```sh
   sudo docker image push node:2.0
-  ```
-  ### แสดงความช่วยเหลือ (help) สำหรับคำสั่ง Docker ทั้งหมด
-  ```sh
-  sudo docker --help
   ```
   ### 
   ```sh
