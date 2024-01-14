@@ -75,7 +75,3 @@
   ```sh
   sudo docker container kill [Container name or ID]
   ```
-  ### 
-  ```sh
-  sudo docker container kill [Container name or ID]
-  ```
