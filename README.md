@@ -56,3 +56,14 @@
   ```sh
   sudo docker container exec -it vigilant_borg bash
   ```
+  ### หยุดการทำงานของ Docker container ที่ชื่อ "vigilant_borg" หรือ Docker container ที่มี ID เป็น "vigilant_borg"
+  ```sh
+  sudo docker container stop vigilant_borg
+  ```
+  ### ใช้แสดงรายการของ Docker containers ที่อยู่ในระบบ รวมถึง containers ที่หยุดทำงาน และ containers ที่กำลังทำงานทั้งหมด
+  ```sh
+  sudo docker container ls -a
+  ```
+  ```sh
+  sudo docker ps -a
+  ```
