@@ -67,3 +67,7 @@
   ```sh
   sudo docker ps -a
   ```
+  ### ยกเลิกการทำงานของ container ทันที
+  ```sh
+  sudo docker container kill my_container
+  ```
