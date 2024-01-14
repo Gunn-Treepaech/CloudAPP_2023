@@ -1,4 +1,9 @@
-## Basic Docker Commands
+# Docker
+  ### ติดตั้ง Docker ในระบบของคุณ
+  ```sh
+  sudo apt-get install docker.io
+  ```
+# Basic Docker Commands
   ### ดึง image ของ Node.js จาก Docker Hub ที่เวอร์ชันล่าสุดมาที่เครื่องของคุณ
   ```sh
   sudo docker image pull node:latest
