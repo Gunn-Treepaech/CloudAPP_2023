@@ -52,5 +52,7 @@
   ```sh
   sudo docker container run -it ubuntu:latest /bin/bash
   ```
-  ### 
+  ### เข้าถึง Bash shell ภายใน Docker container ที่มีชื่อ "vigilant_borg" และทำให้คุณสามารถปฏิบัติกับคำสั่ง Bash ภายใน container นั้นได้
   ```sh
+  sudo docker container exec -it vigilant_borg bash
+  ```
