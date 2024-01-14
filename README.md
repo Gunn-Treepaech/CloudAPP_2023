@@ -48,7 +48,7 @@
   ```sh
   sudo docker image push node:2.0
   ```
-  ### เปิด Docker container ที่ใช้รูปภาพ Ubuntu ที่เวอร์ชันล่าสุดและเริ่ม Bash shell ภายใน container นั้น ๆ 
+  ### เปิด Docker container ที่ใช้ image Ubuntu ที่เวอร์ชันล่าสุดและเริ่ม Bash shell ภายใน container นั้น ๆ 
   ```sh
   sudo docker container run -it ubuntu:latest /bin/bash
   ```
