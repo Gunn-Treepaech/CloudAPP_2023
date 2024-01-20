@@ -11,6 +11,12 @@
   ```sh
   sudo docker volume prune
   ```
+  ### ลบทุก Container, image, Docker volumes ที่มีทั้งหมดในระบบของคุณ
+  ```sh
+  sudo docker rm $(sudo docker ps -aq)
+  sudo docker rmi -f $(sudo docker images -q)
+  sudo docker volume prune
+  ```
 # 🚩Docker 
   ### ติดตั้ง Docker ในระบบของคุณ
   ```sh
