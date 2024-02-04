@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  web:
+    image: flask-test:latest
+    build: .
+    networks:
+      - app-network
+    ports:
+      - "12345:12345"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+      - MYSQL_DB=financial_data
+
+  db:
+    image: mysql:latest
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: user
+      MYSQL_DATABASE: financial_data
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+networks:
+  app-network:
+    driver: overlay
