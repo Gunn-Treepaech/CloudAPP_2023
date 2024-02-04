@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  web:
+    image: 127.0.0.1:5000/flask-test
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    networks:
+      - app-network
+    ports:
+      - "5000:5000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+      - MYSQL_DB=financial_data
+
+  db:
+    image: mysql:latest
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: your_mysql_password
+      MYSQL_DATABASE: your_database_name
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  app-network:
+    driver: overlay
