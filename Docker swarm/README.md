@@ -41,3 +41,35 @@
   ```sh
   sudo docker swarm leave --force
   ```
+  ### ยกระดับโหนดใน Docker Swarm จากเหล่า Worker Node เป็น Manager Node หรือ Leader Node
+  ```sh
+  sudo docker node promote node2
+  ```
+  ### ลดระดับโหนดใน Docker Swarm จาก Manager Node หรือ Leader Node เป็น Worker Node
+  ```sh
+  sudo docker node demote node1
+  ```
+  ### การตั้งค่าสถานะการให้บริการเป็น "drain" จะแสดงว่าโหนดนั้นจะไม่ได้รับการจ่ายงานใหม่ แต่ยังคงทำงานกับ tasks ที่กำลังทำงานอยู่
+  ```sh
+  sudo docker node update --availability drain node1
+  ```
+  ### ตั้งค่าสถานะการให้บริการเป็น "active" นี้แสดงว่าโหนดนั้นได้รับอนุญาตให้รับ tasks ใหม่และเข้าสู่การทำงานปกติใน Docker Swarm
+  ```sh
+  sudo docker node update --availability active node1
+  ```
+  ### แสดงรายการของ tasks ที่กำลังทำงานบนโหนดทั้งหมดใน Docker Swarm
+  ```sh
+  sudo docker node ps
+  ```
+  ### แสดงรายการของ tasks ที่กำลังทำงานบนโหนดที่ระบุ (ในที่นี้คือ node1) ใน Docker Swarm
+  ```sh
+  sudo docker node ps node1
+  ```
+  ### ปรับขนาด (scale) ของ service ใน Docker Swarm ที่มีชื่อ "cluster" โดยกำหนดจำนวน tasks ใหม่ที่ควรทำงานใน service นั้น
+  ```sh
+  sudo docker service scale cluster=6
+  ```
+  ### ลบ VM อย่างสมบูรณ์ รวมถึงการลบข้อมูลต่างๆ เช่นไฟล์ ISO, snapshot, และข้อมูลอื่นๆ ที่เกี่ยวข้องกับ VM "node1"
+  ```sh
+  sudo multipass delete --purge node1
+  ```
