@@ -29,6 +29,10 @@
   ```sh
   sudo docker stack services stackdemo
   ```
+  ### แสดงรายการของ tasks (งาน) ที่เกี่ยวข้องกับ Docker stack ที่ชื่อ stackdemo
+  ```sh
+  sudo docker stack ps stackdemo
+  ```
   ### หยุดและลบทั้งหมดของ Docker stack ที่มีชื่อ "stackdemo"
   ```sh
   sudo docker stack rm stackdemo
