@@ -33,6 +33,9 @@
   ```sh
   sudo docker stack ls
   ```
+  ### ใช้ลบ stack ที่กำลังทำงานใน Docker Swarm
+  ```sh
+  sudo docker stack rm stack_name
   ### ทำให้โหนดปลดจาก Docker Swarm ด้วยการออกจาก Swarm โดยบังคับให้ออกโดยไม่ต้องการยืนยัน
   ```sh
   sudo docker swarm leave --force
