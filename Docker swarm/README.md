@@ -37,3 +37,7 @@
   ```sh
   sudo docker stack ls
   ```
+  ### ทำให้โหนดปลดจาก Docker Swarm ด้วยการออกจาก Swarm โดยบังคับให้ออกโดยไม่ต้องการยืนยัน
+  ```sh
+  sudo docker swarm leave --force
+  ```
