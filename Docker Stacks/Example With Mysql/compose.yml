@@ -2,8 +2,14 @@ version: "3.7"
 
 services:
   web:
-    image: flask-test:latest
-    build: .
+    image: treepaech/flask-test
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
     networks:
       - app-network
     ports:
@@ -16,18 +22,18 @@ services:
       - MYSQL_DB=example
 
   db:
-    image: mysql:latest
+    image: treepaech/mysql-test
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
     networks:
       - app-network
-    environment:
-      MYSQL_ROOT_PASSWORD: user
-      MYSQL_DATABASE: example
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
     ports:
       - "54321:3306"
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
 networks:
   app-network:
