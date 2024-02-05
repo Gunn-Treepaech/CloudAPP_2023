@@ -25,7 +25,7 @@
   ```
   ### ติดตั้ง Docker บนเครื่องเสมือน "docker-host" และเพิ่มผู้ใช้ ubuntu เข้าในกลุ่ม docker
   ```sh
-  sudo multipass exec docker-host -- /bin/bash -c 'curl -s https://get.docker.com | sh - && sudo user mod -aG docker ubuntu'
+  sudo multipass exec docker-host -- /bin/bash -c 'curl -s https://get.docker.com | sh - && sudo usermod -aG docker ubuntu'
   ```
   ### ลบเครื่องเสมือนที่ชื่อ "docker-host"
   ```sh
