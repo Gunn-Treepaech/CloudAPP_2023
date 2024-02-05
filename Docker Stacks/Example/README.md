@@ -7,11 +7,11 @@
   ```
   ### ใช้เริ่มต้นและทำงาน Docker Compose โปรเจคที่กำหนดไว้ในไฟล์ docker-compose.yml ในโหมดที่ไม่บล็อก (detached mode)
   ```sh
-  sudo docker compose up -d
+  sudo docker-compose up -d
   ```
   ### แสดงสถานะของทุกบริการที่กำหนดใน Docker Compose โปรเจคปัจจุบัน
   ```sh
-  sudo docker compose ps
+  sudo docker-compose ps
   ```
   ### ใช้ทดสอบการเรียกใช้บริการที่ทำงานบน localhost ที่พอร์ต 8000 ด้วยคำสั่ง curl
   ```sh
@@ -19,7 +19,7 @@
   ```
   ### หยุดการทำงานของ Docker Compose โปรเจคปัจจุบันและลบทุก volume ที่ถูกสร้างขึ้น
   ```sh
-  sudo docker compose down --volumes
+  sudo docker-compose down --volumes
   ```
   ### ใช้สร้างและเริ่มต้น Docker stack โปรเจคจากไฟล์ compose.yml ที่มีชื่อ stack เป็น "stackdemo"
   ```sh
