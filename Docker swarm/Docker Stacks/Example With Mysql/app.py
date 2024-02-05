@@ -34,7 +34,7 @@ def addcolumn():
 @app.route('/addtable', methods=['GET'])
 def addtable():
     inserttable()
-    return
+    return 'succeed'
 
 def getdb():
     connection = mysql.connector.connect(**config)
