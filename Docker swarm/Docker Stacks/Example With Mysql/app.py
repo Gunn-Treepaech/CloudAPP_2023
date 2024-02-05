@@ -46,16 +46,14 @@ def getdb():
     return results
 
 def insertdata(**datas):
-    data_to_insert = datas
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor(dictionary=True)
-    insert_query = "INSERT INTO example_data (test1, test2, test3) VALUES (%s, %s, %s)"
-    for entry in data_to_insert:
-        cursor.execute(insert_query, (json.dumps(entry['test1']), entry['test2'], entry['test3']))
+    insert_query = "INSERT INTO example_data (test_g, test_u, test_n) VALUES (%s, %s, %s)"
+    cursor.execute(insert_query, (datas['test_g'], datas['test_u'], datas['test_n']))
     connection.commit()
     cursor.close()
     connection.close()
-    return
+    return jsonify(getdb())
 
 def insertcolumn():
     connection = mysql.connector.connect(**config)
@@ -65,7 +63,7 @@ def insertcolumn():
     connection.commit()
     cursor.close()
     connection.close()
-    return
+    return jsonify(getdb())
 
 def inserttable():
     connection = mysql.connector.connect(**config)
@@ -82,14 +80,14 @@ def inserttable():
     connection.commit()
     cursor.close()
     connection.close()
-    return
+    return 0
 
 if __name__ == '__main__':
     # -----------------------------------------------------------------------------------------------
-    config = {
-    "test1": 'gun',
-    "test2": 2024,
-    "test3": 100,
+    test_data = {
+    "test_g": "gun",
+    "test_u": 2024,
+    "test_n": 100,
 }
     # ------------------------------------------------------------------------------------------------
     app.run(host='0.0.0.0', port=12345)
