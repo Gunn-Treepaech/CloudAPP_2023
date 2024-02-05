@@ -13,7 +13,7 @@ services:
       - MYSQL_PORT=3306
       - MYSQL_USER=user
       - MYSQL_PASSWORD=user
-      - MYSQL_DB=financial_data
+      - MYSQL_DB=example
 
   db:
     image: mysql:latest
@@ -21,7 +21,7 @@ services:
       - app-network
     environment:
       MYSQL_ROOT_PASSWORD: user
-      MYSQL_DATABASE: financial_data
+      MYSQL_DATABASE: example
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     volumes:
